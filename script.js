@@ -494,7 +494,6 @@ const displayPerson = (Person) => {
 }
 
 displayPerson(me);
-*/
 
 /////////////////////////////////////////////////////// PUSH/POP/SPLICE MENTIONEEDD ///////////////////////////////////////////////////////
 
@@ -505,7 +504,6 @@ const cars = [
                 {brand: "Lamborghini", made: 2020, speed: "200mph"}
             ]
 
-/*
 console.log(cars[2].brand);
 cars.push({brand: "Johnson", made: 2024, speed: "190mph"});
 cars.pop();
@@ -520,7 +518,24 @@ const carMade = cars.map(car => car.made)
 const carSpeed = cars.map(car => car.speed)
 console.log(`Brands : ${carBrands}\nSpeed : ${carSpeed} \nMade: ${carMade} `)
 const fastestCar = cars.filter(car => car.made === 2020)
-*/
 
 const latestMade = cars.reduce((latest, car) => latest.made > car.made ? latest : car)
 console.log(latestMade)
+/////////////////////////////////////////////////////// SORT //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//cars.sort((latest, car) => latest.made - car.made)
+const oldestModel = cars.reduce((oldest, car) => car.made < oldest.made ? car : oldest)
+console.log(cars)
+
+const people = [
+    {name: "Sel", age: 60, gpa: 1},
+    {name: "Soberano", age: 50, gpa: 1.5},
+    {name: "Calingasan", age: 40, gpa: 2},
+    {name: "Jossiel", age: 30, gpa: 3},
+    {name: "Braylle", age: 20, gpa: 4},
+]
+
+//people.sort((personA, personB) => personA.age - personB.age)
+people.sort((personA, personB) => personA.name.localeCompare(personB.name))
+console.log(people)
+*/
