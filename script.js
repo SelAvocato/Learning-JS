@@ -502,7 +502,7 @@ const cars = [
                 {brand: "Toyota", made: 2020, speed: "90pmh"},
                 {brand: "Ferrari", made: 2021, speed: "200mph"},
                 {brand: "McLarren", made: 2022 , speed:"150mph"},
-                {brand: "Lamborghini", made: 2023, speed: "130pmh"}
+                {brand: "Lamborghini", made: 2020, speed: "200mph"}
             ]
 
 /*
@@ -510,8 +510,17 @@ console.log(cars[2].brand);
 cars.push({brand: "Johnson", made: 2024, speed: "190mph"});
 cars.pop();
 cars.splice(1,2);
+
+/////////////////////////////////////////////////////// FOREACH/MAP/FILTER/REDUCE MENTIONEEDD ///////////////////////////////////////////////////////
+
 cars.forEach(car => console.log(car.brand, car.made, car.speed))
+
+const carBrands = cars.map( car => car.brand)
+const carMade = cars.map(car => car.made)
+const carSpeed = cars.map(car => car.speed)
+console.log(`Brands : ${carBrands}\nSpeed : ${carSpeed} \nMade: ${carMade} `)
+const fastestCar = cars.filter(car => car.made === 2020)
 */
 
-
-console.log(cars)
+const latestMade = cars.reduce((latest, car) => latest.made > car.made ? latest : car)
+console.log(latestMade)
