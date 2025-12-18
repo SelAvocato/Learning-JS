@@ -538,7 +538,6 @@ const people = [
 //people.sort((personA, personB) => personA.age - personB.age)
 people.sort((personA, personB) => personA.name.localeCompare(personB.name))
 console.log(people)
-*/
 /////////////////////////////////////////////////////// SHUFFLING ARRAY //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const cards = ["A", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
@@ -554,3 +553,61 @@ function shuffle(array){
 }
 
 console.log(cards)
+
+/////////////////////////////////////////////////////// DATE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const date = new Date(2025, 0, 1, 2, 3, 4)
+console.log(date)
+
+
+/////////////////////////////////////////////////////// CLOSURE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const outer = (name) => {
+
+    const inner = () => console.log(name);
+
+    inner()
+}
+
+outer("Braylle")
+
+function Counter(){
+    let count = 0; 
+
+    const increment = () => {
+        count++;
+        console.log(`Count = ${count}`)
+        return count
+    }
+
+    const currentCount = () => count;
+
+    return {increment, currentCount};
+}
+const counter = new Counter();
+
+counter.increment();
+counter.increment();
+
+console.log(`The current count is ${counter.currentCount()}`);
+
+function Scores(){
+    let score = 0;
+
+    const addScore = (points) => {
+        score += points;
+    }
+
+    const gameOver = () => score = 0;
+
+    const displayScore = () => console.log(`Score: ${score}`)
+
+    return {addScore, gameOver, displayScore}
+}
+
+const scores = new Scores();
+scores.addScore(10);
+scores.addScore(10);
+scores.gameOver();
+scores.displayScore();
+*/
