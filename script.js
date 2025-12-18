@@ -610,4 +610,34 @@ scores.addScore(10);
 scores.addScore(10);
 scores.gameOver();
 scores.displayScore();
+
+/////////////////////////////////////////////////////// SETTIMEOUT AND CLEARTIMEOUT //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+const btn = document.getElementById("clickBtn");
+const btnCancel = document.getElementById("cancelBtn")
+const value = document.getElementById("count");
+
+function countDown(){
+let timeSpan = 3000;
+let newValue = Number(value.textContent);
+const setTime = () => timeoutId = setTimeout(() => alert("Hi"), timeSpan);
+const cancelTime = () => clearTimeout(timeoutId);
+const decrement = () => {
+        while(newValue>=0){
+            value.textContent = newValue;
+            console.log(newValue);
+            newValue--;
+        }
+}
+return {setTime, cancelTime, decrement}
+};
+const countdown = new countDown();
+
+btn.addEventListener("click", () => {
+    countdown.setTime();
+    countdown.decrement();
+});
+
+btnCancel.addEventListener("click", () => countdown.cancelTime());
 */
