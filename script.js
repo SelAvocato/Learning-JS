@@ -647,7 +647,6 @@ import {PI, getArea, getCircumference, getVolume} from './mathUtil.js';
 
 console.log(PI);
 console.log(getArea(2));
-*/
 
 /////////////////////////////////////////////////////// SYNCHRONOUS AND ASYNCHRONOUS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -665,3 +664,32 @@ function func2(){
 }
 
 func1(func2);
+
+/////////////////////////////////////////////////////// ERROR HANDLING //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+try{
+    console.log("Hi")
+} catch(error) {
+    console.error(error)
+} finally {
+    console.log("This always run.")
+}
+
+console.log("The end")
+
+try{
+const dividend = Number(window.prompt("Enter a dividend:"));
+const divisor = Number(window.prompt("Enter a divisor:"));
+
+if( isNaN(dividend) || isNaN(divisor)) throw new Error("dividend and divisor must be a number")
+if(divisor == 0) throw new Error("you can't divide by zero");
+
+const value = dividend / divisor;
+
+console.log(value);
+} catch(error) {
+    console.error(error)
+}
+
+console.log("The end");
+*/
