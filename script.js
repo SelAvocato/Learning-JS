@@ -640,4 +640,28 @@ btn.addEventListener("click", () => {
 });
 
 btnCancel.addEventListener("click", () => countdown.cancelTime());
+
+/////////////////////////////////////////////////////// ES6 MODULE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import {PI, getArea, getCircumference, getVolume} from './mathUtil.js';
+
+console.log(PI);
+console.log(getArea(2));
 */
+
+/////////////////////////////////////////////////////// SYNCHRONOUS AND ASYNCHRONOUS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function func1(callback){
+    setTimeout(() =>{
+        console.log("function 1");
+        callback();
+    }, 3000);
+}
+
+function func2(){
+    console.log("function 2");
+    console.log("function 3");
+    console.log("function 4");
+}
+
+func1(func2);
