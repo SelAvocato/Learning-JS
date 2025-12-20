@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+.container{
+    border: 5px solid blue;
+    border-radius: 10px;
+    padding: 2rem 20px;
+    width: 21rem;
+}
+
+.display{
+    padding: 0.8rem 0.3rem;
+    display: flex;
+    justify-content: end;
+    border: 5px solid gray;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+    .display p{
+        font-size: 3rem;
+        margin: 0;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+    .buttons button{
+        font-size: 2.5rem;
+    }
+        .equal{
+            grid-row: 3 / span 2;
+            grid-column: 5;
+        }
+        
+@media (max-width: 500px) {
+    .display p {
+        font-size: 2.2rem;
+    }
+
+    .buttons button {
+        font-size: 1.8rem;
+        padding: 0.6rem;
+    }
+}
