@@ -692,4 +692,51 @@ console.log(value);
 }
 
 console.log("The end");
+
+/////////////////////////////////////////////////////// DOM //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////// ELEMENT SELECTORS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const hai = document.getElementById("hai");
+hai.style.fontSize = "40px";
+hai.style.textAlign = "center";
+hai.style.fontFamily = "sans-serif";
+
+const fruits = document.getElementsByClassName("fruits");
+let i = 0;
+let speed = 100;
+let colors = ["red", "green", "blue"]
+let initialColor = "rgba(209, 181, 181, 1)";
+const iteration = () => {
+    if(i == 0){
+        fruits[i+fruits.length-1].style.backgroundColor = initialColor
+        fruits[i+fruits.length-1].style.fontSize =  "30px"
+        fruits[i].style.backgroundColor = colors[i];
+        fruits[i].style.fontSize = "40px"
+        i++
+        speed += 20;
+    } else if(i==fruits.length-1){
+        fruits[i-1].style.backgroundColor = initialColor
+        fruits[i-1].style.fontSize =  "30px"
+        fruits[i].style.backgroundColor = colors[i % colors.length];
+        fruits[i].style.fontSize = "40px"
+        i = 0
+        speed += 20;
+    } else {
+        fruits[i-1].style.backgroundColor = initialColor
+        fruits[i-1].style.fontSize =  "30px"
+        fruits[i].style.backgroundColor = colors[i % colors.length];
+        fruits[i].style.fontSize = "40px"
+        i++
+        speed += 20;
+    }
+    slow(speed)
+}
+let s = 0;
+const slow = (speed) => {
+    s++
+    if(s == 20) return
+    setTimeout(iteration, speed)
+}
+iteration()
 */
