@@ -738,5 +738,29 @@ const slow = (speed) => {
     if(s == 20) return
     setTimeout(iteration, speed)
 }
+
 iteration()
+
 */
+
+/////////////////////////////////////////////////////// CREATE, ADD, REMOVE ELEMENT //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const newList = document.createElement("li");
+newList.textContent = "Hakdogs";
+newList.style.backgroundColor = "red"
+
+const food = document.querySelectorAll("li")
+
+document.getElementById("foods").insertBefore(newList, food[3]);
+document.getElementById("foods").removeChild(newList);
+
+
+const newList = document.createElement("p")
+newList.style.backgroundColor = "red"; 
+const list = document.querySelectorAll("#foods p")
+
+const append = (food) => {
+    newList.textContent = food;
+    document.getElementById("foods").insertBefore(newList, list[2])
+    console.log(newList.textContent)
+}

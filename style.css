@@ -22,3 +22,21 @@ body{
     background: rgba(209, 181, 181, 1);
     font-size: 30px;;
 }
+/*
+#foods{
+    border: 1px solid black;
+}
+*/
+li{
+    font-size: 2rem;
+    list-style: decimal;
+}
+
+#container{
+    border: 1px solid black;
+    padding: 1rem;
+}
+    #container p{
+        margin: 0.3rem;
+        font-size: 2rem;
+    }
