@@ -741,7 +741,6 @@ const slow = (speed) => {
 
 iteration()
 
-*/
 
 /////////////////////////////////////////////////////// CREATE, ADD, REMOVE ELEMENT //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -755,6 +754,7 @@ document.getElementById("foods").insertBefore(newList, food[3]);
 document.getElementById("foods").removeChild(newList);
 
 
+*/
 const newList = document.createElement("p")
 newList.style.backgroundColor = "red"; 
 const list = document.querySelectorAll("#foods p")
