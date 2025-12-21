@@ -62,7 +62,19 @@ const replaceOperation = () => {
 }
 
 const equal = () => {
-    replaceOperation();
 
-    output.textContent = eval(output.textContent);
+    try{
+        replaceOperation();
+        
+        if(eval(output.textContent) == "Infinity"){
+            output.textContent = "You can't divide by zero";
+            setTimeout(() => output.textContent = "0", 1000)
+        };
+        
+        output.textContent = eval(output.textContent);
+        if (output.textContent == "NaN") throw new Error() 
+    } catch(error) {
+        error = "Error"
+        output.textContent = error;
+    }
 }
