@@ -56,12 +56,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10rem;
+    height: 20rem;
     border: 1px solid black;
 }
 #box p{
-    border: 1px solid black;
-    position: absolute;
+    position: relative;
+    border-radius: 20px;
     top: 0px;
     left: 0px;
 }

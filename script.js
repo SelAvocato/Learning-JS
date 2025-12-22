@@ -834,7 +834,6 @@ document.addEventListener("keyup", () =>{
     box.textContent = "Hi Again"
     box.style.backgroundColor = "lightblue"
 });
-*/
 
 const p = document.getElementById("hi");
 let left = 0;
@@ -853,4 +852,44 @@ document.addEventListener("keydown", event => {
         t -= 10;
         p.style.top = t + "px";
     }
+})
+*/
+
+const p = document.getElementById("hi");
+let move = 10;
+y = 0;
+x = 0;
+
+document.addEventListener("keydown", e => {
+
+    if(e.key.startsWith("Arrow")){
+
+        p.textContent = "🫨"
+        p.style.backgroundColor = "tomato"
+
+        e.preventDefault();
+
+        switch(e.key){
+            case("ArrowUp"):
+            y -= move;
+            break;
+            case("ArrowDown"):
+            y += move;
+            break;
+            case("ArrowLeft"):
+            x -= move;
+            break;
+            case("ArrowRight"):
+            x += move;
+            break;
+        }
+
+        p.style.top = `${y}px`
+        p.style.left = `${x}px`
+    }
+});
+
+document.addEventListener("keyup", () => {
+    p.textContent = "😊";
+    p.style.backgroundColor = "White"
 })
