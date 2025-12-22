@@ -1,11 +1,4 @@
-*{
-    box-sizing: border-box;
-}
-
-body{
-    font-family: sans-serif;
-}
-
+/*
 .wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -22,11 +15,10 @@ body{
     background: rgba(209, 181, 181, 1);
     font-size: 30px;;
 }
-/*
 #foods{
     border: 1px solid black;
 }
-*/
+
 li{
     font-size: 2rem;
     list-style: decimal;
@@ -40,3 +32,29 @@ li{
         margin: 0.3rem;
         font-size: 2rem;
     }
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+#box{
+    border: 1px solid black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+}
+#buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+#btn{
+    font-size: 2rem;
+}

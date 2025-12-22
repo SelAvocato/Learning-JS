@@ -771,8 +771,6 @@ const createHelloWorld = (text) => {
 
 createHelloWorld("Hello World");
 
-
-*/
 const twoNums = (nums, target) => {
     for(let i = 0; i<nums.length; i++){
         for(let x = 0; x<nums.length; x++){
@@ -784,4 +782,43 @@ const twoNums = (nums, target) => {
 }
 
 twoNums([6,1,3,2,5,6], 10)
+*/
 
+/////////////////////////////////////////////////////// EVENT LISTENERS FOR MOUSE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const btn = document.getElementById("btn");
+const box = document.getElementById("box");
+
+let clicked = false;
+
+newBtn = document.createElement("button")
+newBtn.id = "btn";
+newBtn.textContent = "Revive 😇";
+
+btn.addEventListener("mouseenter", () =>{
+    if(clicked) return
+    box.style.backgroundColor = "Yellow"
+    box.textContent = "DON'T DO IT 😨"
+})
+
+btn.addEventListener("mouseleave", () =>{
+    if(clicked) return
+    box.style.backgroundColor = "white";
+    box.textContent = "Hello 😊";
+})
+
+btn.addEventListener("click", () =>{
+    box.style.backgroundColor = "red"
+    box.textContent = "😵"
+    clicked = true;
+
+    document.getElementById("buttons").append(newBtn)
+})
+
+newBtn.addEventListener("click", () => {
+    box.style.backgroundColor = "white";
+    box.textContent = "Hello 😊";
+
+    document.getElementById("buttons").removeChild(newBtn)
+    clicked = false;
+})
