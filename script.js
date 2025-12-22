@@ -782,8 +782,6 @@ const twoNums = (nums, target) => {
 }
 
 twoNums([6,1,3,2,5,6], 10)
-*/
-
 /////////////////////////////////////////////////////// EVENT LISTENERS FOR MOUSE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const btn = document.getElementById("btn");
@@ -821,4 +819,38 @@ newBtn.addEventListener("click", () => {
 
     document.getElementById("buttons").removeChild(newBtn)
     clicked = false;
+})
+
+/////////////////////////////////////////////////////// EVENT LISTENERS FOR KEYS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const box = document.getElementById("box");
+
+document.addEventListener("keydown", () => {
+    box.textContent = "NOOO"
+    box.style.backgroundColor = "red"
+});
+
+document.addEventListener("keyup", () =>{
+    box.textContent = "Hi Again"
+    box.style.backgroundColor = "lightblue"
+});
+*/
+
+const p = document.getElementById("hi");
+let left = 0;
+let t = 0;
+document.addEventListener("keydown", event => {
+    if(event.key === "ArrowRight"){
+        left += 10;
+        p.style.left = left + "px";
+    } else if(event.key === "ArrowDown"){
+        t += 10;
+        p.style.top = t + "px";
+    } else if(event.key === "ArrowLeft"){
+        left -= 10;
+        p.style.left = left + "px";
+    } else if(event.key === "ArrowUp"){
+        t -= 10;
+        p.style.top = t + "px";
+    }
 })

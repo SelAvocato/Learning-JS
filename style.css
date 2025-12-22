@@ -32,6 +32,15 @@ li{
         margin: 0.3rem;
         font-size: 2rem;
     }
+        
+    #buttons{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    #btn{
+        font-size: 2rem;
+    }
 */
 
 *{
@@ -43,18 +52,16 @@ body{
 }
 
 #box{
-    border: 1px solid black;
     font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
+    height: 10rem;
+    border: 1px solid black;
 }
-#buttons{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-#btn{
-    font-size: 2rem;
+#box p{
+    border: 1px solid black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
