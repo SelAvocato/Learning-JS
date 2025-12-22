@@ -754,7 +754,6 @@ document.getElementById("foods").insertBefore(newList, food[3]);
 document.getElementById("foods").removeChild(newList);
 
 
-*/
 const newList = document.createElement("p")
 newList.style.backgroundColor = "red"; 
 const list = document.querySelectorAll("#foods p")
@@ -764,3 +763,25 @@ const append = (food) => {
     document.getElementById("foods").insertBefore(newList, list[2])
     console.log(newList.textContent)
 }
+
+
+const createHelloWorld = (text) => {
+    return console.log(text)
+}
+
+createHelloWorld("Hello World");
+
+
+*/
+const twoNums = (nums, target) => {
+    for(let i = 0; i<nums.length; i++){
+        for(let x = 0; x<nums.length; x++){
+            if(nums[i] + nums[x] == target){
+                return console.log(nums[i], nums[x]);
+            }
+        }
+    }
+}
+
+twoNums([6,1,3,2,5,6], 10)
+
