@@ -892,7 +892,6 @@ document.addEventListener("keyup", () => {
     p.textContent = "😊";
     p.style.backgroundColor = "White"
 })
-*/
 
 const bar = document.querySelectorAll("#graph .bar")
 let barI = null;
@@ -903,17 +902,7 @@ for(let x = 0; x<bar.length; x++){
 
 const select = verb => {
 
-    switch(verb){
-        case(bar[0].textContent.toLowerCase()):
-        barI = 0;
-        break;
-        case(bar[1].textContent.toLowerCase()):
-        barI = 1;
-        break;
-        case(bar[2].textContent.toLowerCase()):
-        barI = 2;
-        break;
-    }
+    barI = [...bar].findIndex(b => b.textContent.toLowerCase() === verb);
 
     document.getElementById("verbP").textContent = bar[barI].textContent
 }
@@ -923,3 +912,19 @@ const addValue = () => {
 
     document.getElementById(`bar${barI}`).style.paddingTop = `${val}px`;
 }
+
+*/
+
+/////////////////////////////////////////////////////// HIDING/SHOWING IMAGE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const btn = document.getElementById("btn")
+const img = document.getElementById("img")
+
+btn.addEventListener("click", () => {
+
+    if(img.style.visibility == "visible"){
+        img.style.visibility = "hidden"
+    } else{
+        img.style.visibility = "visible"
+    }
+})
