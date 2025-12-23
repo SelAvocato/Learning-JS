@@ -853,7 +853,6 @@ document.addEventListener("keydown", event => {
         p.style.top = t + "px";
     }
 })
-*/
 
 const p = document.getElementById("hi");
 let move = 10;
@@ -893,3 +892,34 @@ document.addEventListener("keyup", () => {
     p.textContent = "😊";
     p.style.backgroundColor = "White"
 })
+*/
+
+const bar = document.querySelectorAll("#graph .bar")
+let barI = null;
+
+for(let x = 0; x<bar.length; x++){
+    bar[x].id = `bar${x}`
+}
+
+const select = verb => {
+
+    switch(verb){
+        case(bar[0].textContent.toLowerCase()):
+        barI = 0;
+        break;
+        case(bar[1].textContent.toLowerCase()):
+        barI = 1;
+        break;
+        case(bar[2].textContent.toLowerCase()):
+        barI = 2;
+        break;
+    }
+
+    document.getElementById("verbP").textContent = bar[barI].textContent
+}
+
+const addValue = () => {
+    let val = document.getElementById("value").value;
+
+    document.getElementById(`bar${barI}`).style.paddingTop = `${val}px`;
+}
