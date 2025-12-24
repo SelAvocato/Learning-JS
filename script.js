@@ -913,7 +913,6 @@ const addValue = () => {
     document.getElementById(`bar${barI}`).style.paddingTop = `${val}px`;
 }
 
-*/
 
 /////////////////////////////////////////////////////// HIDING/SHOWING IMAGE //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -928,3 +927,43 @@ btn.addEventListener("click", () => {
         img.style.visibility = "visible"
     }
 })
+
+*/
+
+/////////////////////////////////////////////////////// NODELIST //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const btn = document.querySelectorAll(".btn");
+const p = document.getElementById("p")
+
+btn.forEach(b => {
+    b.addEventListener("click", event => {
+        event.target.style.backgroundColor = "blue"
+        event.target.textContent += "😎";
+        p.textContent = event.target.textContent;
+    })
+})
+
+----------------Hover Thingy----------------
+const btn = document.querySelectorAll(".btn")
+
+btn.forEach(b => {
+    b.addEventListener("mouseover", event => {
+        event.target.style.backgroundColor = "black"
+    })
+
+    b.addEventListener("mouseout", event => {
+        event.target.style.backgroundColor = "red"
+    })
+})
+
+const newBtn = document.createElement("button")
+newBtn.textContent = "button 5"
+newBtn.classList = "btn";
+
+document.getElementById("btn-container").appendChild(newBtn);
+
+const con = document.getElementById("btn-container");
+
+[...con.children].forEach(element => {
+    element.style.backgroundColor = "red"
+});
