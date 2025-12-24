@@ -928,7 +928,6 @@ btn.addEventListener("click", () => {
     }
 })
 
-*/
 
 /////////////////////////////////////////////////////// NODELIST //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -967,3 +966,41 @@ const con = document.getElementById("btn-container");
 [...con.children].forEach(element => {
     element.style.backgroundColor = "red"
 });
+
+/////////////////////////////////////////////////////// CLASSLIST //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const btn = document.getElementById("btn")
+
+btn.addEventListener("click", event => {
+    if(event.target.classList.contains("enabled")){
+        event.target.classList.remove("enabled");
+        event.target.textContent = "NOOOOOOOOOOO"
+    } else {
+        event.target.classList.add("enabled")
+        event.target.textContent = "Click Me"
+    }
+})
+*/
+
+const btns = document.querySelectorAll(".buttons")
+
+btns.forEach(b => {
+    b.addEventListener("click", event => {
+        if(event.target.classList.contains("enabled")){
+            event.target.classList.replace("enabled", "disabled")
+            event.target.textContent = "disabled"
+        } else {
+            event.target.classList.add("enabled")
+            event.target.classList.replace("disabled", "enabled")
+            event.target.textContent = "enabled"
+        }
+
+    })
+
+    b.addEventListener("mouseover", event => {
+        event.target.classList.toggle("hover")
+    })
+    b.addEventListener("mouseleave", event => {
+        event.target.classList.toggle("hover")
+    })
+})
