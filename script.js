@@ -1046,7 +1046,6 @@ async function doChores(){
 }
 
 doChores()
-*/
 
 const fillWater = () =>{
     const waterText = document.getElementById("waterText")
@@ -1086,3 +1085,11 @@ async function doChores(){
 }
 
 doChores();
+*/
+
+/////////////////////////////////////////////////////// JSON //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+fetch("people.json")
+    .then(response => response.json())
+    .then(values => values.forEach(v => console.log(v.isStudent)))
+    .catch(error => console.error(error))
