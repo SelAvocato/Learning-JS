@@ -980,7 +980,6 @@ btn.addEventListener("click", event => {
         event.target.textContent = "Click Me"
     }
 })
-*/
 
 const btns = document.querySelectorAll(".buttons")
 
@@ -1004,3 +1003,47 @@ btns.forEach(b => {
         event.target.classList.toggle("hover")
     })
 })
+*/
+
+/////////////////////////////////////////////////////// PROMISES //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const walkDog = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("You take out dog")
+        }, 500)
+    })
+}
+
+
+const trashOut = () => {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve("You take out trash")
+        }, 1000)
+    })
+}
+
+const cleanKitchen = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("You cleaned kitchen")
+        }, 500)
+    })
+}
+
+async function doChores(){
+    const walkDogResult = await walkDog();
+    console.log(walkDogResult);
+
+    const trashOutResult = await trashOut();
+    console.log(trashOutResult);
+
+    const cleanKitchenResult = await cleanKitchen();
+    console.log(cleanKitchenResult) 
+
+    setTimeout(() => console.log("Chores Done"), 500)
+}
+
+doChores()

@@ -6,13 +6,13 @@ slide[currentSlide].style.display = "block"
 const prev = () => {
     slide[currentSlide].style.display = "none"
     currentSlide--
-    if(currentSlide==-1) currentSlide = currentSlide + 3;
+    if(currentSlide<0) currentSlide = currentSlide + slide.length;
     slide[currentSlide].style.display = "block"
 }
 
 const next = () => {
     slide[currentSlide].style.display = "none"
     currentSlide++
-    currentSlide = currentSlide % 3;
+    currentSlide = currentSlide % slide.length;
     slide[currentSlide].style.display = "block"
 }

@@ -89,19 +89,6 @@ li{
     padding: 1rem 3rem;
 }
 
-*/
-*{
-    box-sizing: border-box;
-}
-
-body{
-    font-family: sans-serif;
-    display: flex;
-    place-items: center;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .buttons{
     font-size: 2rem;
 }
@@ -116,4 +103,17 @@ body{
 
 .disabled{
     background-color:rgba(0, 0, 0, 0.527);
+}
+
+*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    gap: 1rem;
 }
