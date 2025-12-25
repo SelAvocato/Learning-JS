@@ -1003,7 +1003,6 @@ btns.forEach(b => {
         event.target.classList.toggle("hover")
     })
 })
-*/
 
 /////////////////////////////////////////////////////// PROMISES //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1047,3 +1046,43 @@ async function doChores(){
 }
 
 doChores()
+*/
+
+const fillWater = () =>{
+    const waterText = document.getElementById("waterText")
+    waterText.textContent = "Filling water..."
+
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve("Water Filled"), 1000)
+    })
+}
+
+const fixBed = () => {
+    const bedText = document.getElementById("bedText")
+    bedText.textContent = "Fixing Bed..."
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("You've fixed the bed."), 1000)
+    })
+}
+
+const cookFood = () => {
+    const foodText = document.getElementById("foodText")
+    foodText.textContent = "Cooking Food..."
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>resolve("You're done cooking"), 1000)
+    })
+}
+
+async function doChores(){
+    const fillWaterResult = await fillWater();
+    waterText.textContent = fillWaterResult
+    
+    const fixBedResult = await fixBed();
+    bedText.textContent = fixBedResult;
+
+    const cookFoodResult = await cookFood();
+    foodText.textContent = cookFoodResult;
+}
+
+doChores();
