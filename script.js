@@ -1085,7 +1085,6 @@ async function doChores(){
 }
 
 doChores();
-*/
 
 /////////////////////////////////////////////////////// JSON //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1093,3 +1092,39 @@ fetch("people.json")
     .then(response => response.json())
     .then(values => values.forEach(v => console.log(v.isStudent)))
     .catch(error => console.error(error))
+
+
+/////////////////////////////////////////////////////// FETCH //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    .then(response => {
+        if(!response.ok){
+            throw new Error("Data could not be fetched.");
+        } else {
+            return response.json();
+        }
+    })
+    .then(data => console.log(data.name))
+    .catch(error => console.error(error))
+*/
+
+async function fetchPokemon(){
+
+    try{
+        const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+
+        if(!response.ok){
+            throw new Error("Could not fetch data.")
+        }
+
+        const data = await response.json();
+        const pokemonSprite = document.getElementById("pokemonSprite");
+        console.log(data)
+        pokemonSprite.src = data.sprites.front_default;
+        pokemonSprite.style.display = "block";
+
+    } catch(e){
+        console.error(e)
+    }
+}
