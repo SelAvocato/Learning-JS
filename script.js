@@ -1106,7 +1106,6 @@ fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
     })
     .then(data => console.log(data.name))
     .catch(error => console.error(error))
-*/
 
 async function fetchPokemon(){
 
@@ -1128,3 +1127,17 @@ async function fetchPokemon(){
         console.error(e)
     }
 }
+const form = document.getElementById("form")
+const textInput = document.getElementById("textInput");
+const text = document.getElementById("text");
+const nameText =  localStorage.getItem('name')
+
+form.addEventListener("submit", event => {
+    localStorage.setItem('name', textInput.value)
+    nameText = localStorage.getItem('name')
+    text.append(nameText)
+})
+
+if(nameText) text.append(nameText)
+    // localStorage.clear()
+*/
