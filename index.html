@@ -120,14 +120,28 @@
     <button onclick="fetchPokemon()">Fetch Pokemon</button><br>
 
     <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none;"> -->
-    
+<!-- TASK 
     <main class="container">
         <div class="card">
             <p>Task</p>
             <p>Status</p>
+            <p>Created At</p>
         </div>
     </main>
+    <button id="showFormBtn"">Create Task</button>
 
-    <script src="script.js"></script>
+    
+    <form id="createForm" style="display: none;">
+        <input id="task" type="text" placeholder="Task">
+        <input id="createTask" type="submit" value="Create">
+    </form> -->
+
+    <input id="taskName" type="text" placeholder="task">
+    <button id="addTask">Add Task</button>
+
+    <ol id="tasks">
+    </ol>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>

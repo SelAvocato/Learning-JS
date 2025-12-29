@@ -105,7 +105,9 @@ li{
     background-color:rgba(0, 0, 0, 0.527);
 }
 
+
 */
+
 *{
     box-sizing: border-box;
 }
@@ -117,3 +119,4 @@ body{
     flex-direction: column;
     gap: 1rem;
 }
+

@@ -1141,3 +1141,19 @@ form.addEventListener("submit", event => {
 if(nameText) text.append(nameText)
     // localStorage.clear()
 */
+
+const ol = document.getElementById("tasks")
+const taskName = document.getElementById("taskName")
+const addTask = document.getElementById("addTask")
+
+addTask.addEventListener("click", () => {
+    const task = document.createElement("li")
+    task.textContent = taskName.value
+
+    ol.appendChild(task)
+})
+
+function displayTasks(){
+    
+}
+// localStorage.clear()
